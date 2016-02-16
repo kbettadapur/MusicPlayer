@@ -1,0 +1,1 @@
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer.csproj;x86

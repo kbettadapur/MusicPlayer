@@ -1,0 +1,1 @@
+C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\crypto\obj\Debug\lib\net20\BouncyCastle.csprojResolveAssemblyReference.cache

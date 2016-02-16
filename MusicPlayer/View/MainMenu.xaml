@@ -1,0 +1,98 @@
+﻿<Page
+    x:Class="MusicPlayer.View.MainMenu"
+    x:Name="MainMenuPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MusicPlayer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cv="using:MusicPlayer.View.Converters"
+    xmlns:views="using:MusicPlayer.View"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <cv:TimeConverter x:Key="TimeConverter"/>
+    </Page.Resources>
+
+    <Grid Background="White">
+        <ScrollViewer>
+            <Grid ScrollViewer.IsVerticalRailEnabled="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="700"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Visibility="{Binding SongLabelVisibility}" Margin="35,0,0,0" Grid.Row="1" Grid.Column="0" Text="Songs" FontWeight="Bold" FontSize="20"/>
+                <Button Content="All Songs" Grid.Row="1" Grid.Column="0" Height="25" 
+                        Width="70" Margin="0,0,50,0" Background="Orange" Foreground="White" 
+                        FontWeight="Bold" HorizontalAlignment="Right" Visibility="{Binding SongLabelVisibility}"
+                        FontSize="9" Command="{Binding AllSongsCommand}"/>
+                <ListView Grid.ColumnSpan="100" SelectedItem="{Binding SelectedSong}" Grid.Row="2" Grid.Column="0" BorderBrush="Transparent" ItemsSource="{Binding SongHits}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="300"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Title}" HorizontalAlignment="Left" FontWeight="ExtraBold"/>
+                                    <TextBlock Grid.Row="1" Text="{Binding Artist}" HorizontalAlignment="Left"/>
+                                </Grid>
+
+                                <Grid Grid.Column="0">
+                                    <Image Source="{Binding AlbumArtList[0].Url}" Height="50" Width="50"/>
+                                </Grid>
+                                <TextBlock Grid.Column="2" Grid.Row="0" Text="{Binding Duration}" Height="20" Width="50"/>
+                                <Button Grid.Column="3" CommandParameter="{Binding }" Command="{Binding DataContext.PlayCommand, ElementName=MainMenuPage}" 
+                                FontSize="15" FontFamily="Segoe Ui Symbol" Content="&#xE102;" 
+                                Height="30" Width="50" HorizontalAlignment="Center" Background="White"></Button>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <TextBox Grid.Column="2" Height="30" Width="225" Text="{Binding Path=SearchQuery, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Tracks, Artists, Albums" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Button Grid.Column="2" Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Command="{Binding SearchCommand}" Content="Search"/>
+                <Button Grid.Column="2" Grid.Row="1" Height="30" Width="100" Command="{Binding PauseCommand}"  Content="Pause"/>
+                <TextBlock Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" Text="{Binding TimeElapsed, Converter={StaticResource TimeConverter}}"/>
+
+
+                <TextBlock Visibility="{Binding ArtistLabelVisibility}" Margin="35,20,0,0" Grid.Row="3" Grid.Column="0" Height="30" Text="Artists" FontWeight="Bold" FontSize="20"/>
+                <ListView Grid.ColumnSpan="100" SelectedItem="{Binding SelectedSong}" Grid.Row="4" Grid.Column="0" BorderBrush="Transparent" ItemsSource="{Binding ArtistHits}">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Margin="20,15,0,0" Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <Image Source="{Binding ArtistArtRef}" Grid.Row="0" Height="50" Width="100" VerticalAlignment="Bottom"/>
+
+                                <TextBlock Text="{Binding ArtistName}" Height="30" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </ScrollViewer>
+        <views:PlayerUserControl VerticalAlignment="Bottom" Width="1000"/>
+    </Grid>
+</Page>

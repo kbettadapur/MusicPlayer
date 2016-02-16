@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="MusicPlayer.View.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MusicPlayer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#F77F00">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="1" Command="{Binding Path=LoginCommand}" Foreground="Black" Background="Gray" Content="Login" Width="100" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" Width="200" Height="30" PlaceholderText="Username" Text="{Binding Path=Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,210,100"/>
+
+        <PasswordBox Grid.Row="1" Width="200" Height="30" PlaceholderText="Password" Password="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="200,0,0,100"/>
+        <TextBlock Grid.Row ="1" Width="200" Height="30" Text="Incorrect Credentials" Visibility="{Binding ShowErrorMessage}" Foreground="Red" Margin="70,0,0,160"/>
+        <Border Grid.Row="0" Grid.RowSpan="1">
+            <Image Source="ms-appx:///Assets/googlePlayHeadphones.png" Stretch="Fill" Height="200" Width="300"/>
+        </Border>
+    </Grid>
+</Page>
