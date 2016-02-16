@@ -28,6 +28,10 @@ namespace MusicPlayer.ViewModel
         {
             if (BackgroundMediaPlayer.Current.CurrentState == MediaPlayerState.Paused)
             {
+                if (Player.GetInstance().CurrentSong == -1)
+                {
+                    Player.GetInstance().CurrentSong++;
+                }
                 Playing = true;
                 OnPropertyChanged("Playing");
             }

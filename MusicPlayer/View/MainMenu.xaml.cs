@@ -1,4 +1,5 @@
 ﻿using MusicPlayer.ViewModel;
+using MusicPlayer.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,13 +24,43 @@ namespace MusicPlayer.View
     /// </summary>
     public sealed partial class MainMenu : Page
     {
+        MainMenuViewModel mmvm;
+        bool _isNewPageInstance = false;
+
         public MainMenu()
         {
             this.InitializeComponent();
-            var vm = new MainMenuViewModel();
-            this.DataContext = vm;
-            
+            _isNewPageInstance = true;
         }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            if (e.NavigationMode != NavigationMode.Back)
+            {
+                NavigationHelper.GetInstance().Add(mmvm);
+            }
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (_isNewPageInstance)
+            {
+                if (mmvm == null)
+                {
+                    if (NavigationHelper.GetInstance().Count() > 0)
+                    {
+                        mmvm = (MainMenuViewModel)NavigationHelper.GetInstance().Pop();
+                    }
+                    else
+                    {
+                        mmvm = new MainMenuViewModel();
+                    }
+                }
+                DataContext = mmvm;
+            }
+            _isNewPageInstance = false;
+        }
+
 
 
     }

@@ -3,22 +3,11 @@ using MusicPlayer.Model.Net;
 using MusicPlayer.View;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Windows.Web.Http;
-using Windows.Web.Http.Filters;
-using Newtonsoft.Json;
-using Org.BouncyCastle.Crypto.Digests;
-using Org.BouncyCastle.Crypto.Macs;
-using Org.BouncyCastle.Crypto.Parameters;
-using System.Net;
-using System.IO;
-using NAudio.Wave;
-using System.ComponentModel;
-using Windows.UI.Xaml.Controls;
 using Windows.Media.Playback;
 using Windows.UI.Xaml;
+
 
 namespace MusicPlayer.ViewModel
 {
@@ -31,7 +20,6 @@ namespace MusicPlayer.ViewModel
         public List<Artist> ArtistHits { get; set; }
         public string SearchQuery { get; set; }
         public RelayCommand PlayCommand { get; set; }
-        public Song SongSelected { get; set; }
         public RelayCommand PauseCommand { get; set; }
         public RelayCommand AllSongsCommand { get; set; }
         public string SongLabelVisibility { get; set; }
@@ -41,7 +29,7 @@ namespace MusicPlayer.ViewModel
         TotalJsonData AllHits;
         public RelayCommand AddToQueueCommand { get; set; }
         
-
+        //Building instance from scratch
         public MainMenuViewModel()
         {
             SearchCommand = new RelayCommand(Search);
@@ -53,6 +41,12 @@ namespace MusicPlayer.ViewModel
             ArtistLabelVisibility = "Collapsed";
             BackgroundMediaPlayer.Current.MediaEnded += MediaEndedEventHandler;
             AddToQueueCommand = new RelayCommand(AddToQueue);
+        }
+
+        //Building instance from previous info
+        public MainMenuViewModel(MainMenuViewModel other)
+        {
+            
         }
 
         public async void Search(object parameter)
@@ -85,7 +79,7 @@ namespace MusicPlayer.ViewModel
             return url;
         }
 
-        public async void Play(object parameter)
+        public void Play(object parameter)
         {
             Player.GetInstance().Play(parameter);
         }
@@ -97,7 +91,7 @@ namespace MusicPlayer.ViewModel
 
         public void NavigateToAllSongs(object parameter)
         {
-            NavigationService.GetInstance().Navigate(typeof(AllSongsPage), SongHits);
+            NavigationService.GetInstance().Navigate(typeof(AllSongsPage), Hits.GetSongHits(AllHits.entries, 50));
         }
 
         public void AddToQueue(object parameter)

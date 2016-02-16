@@ -16,14 +16,14 @@ namespace MusicPlayer.Model
         public DispatcherTimer timer { get; set; }
         private static Player Instance;
         public List<Song> SongQueue { get; set; }
-        int currentSong;
+        public int CurrentSong { get; set; }
 
         private Player()
         {
             Playing = false;
             SongQueue = new List<Song>();
            
-            currentSong = -1;
+            CurrentSong = -1;
             BackgroundMediaPlayer.Current.MediaEnded += MediaEndedEventHandler;
         }
 
@@ -78,14 +78,14 @@ namespace MusicPlayer.Model
 
         void MediaEndedEventHandler(MediaPlayer mp, object parameter)
         {
-            currentSong++;
-            if (currentSong == SongQueue.Count)
+            CurrentSong++;
+            if (CurrentSong == SongQueue.Count)
             {
                 BackgroundMediaPlayer.Current.Pause();
             }
             else
             {
-                Play(SongQueue[currentSong]);
+                Play(SongQueue[CurrentSong]);
             }
         }
     }

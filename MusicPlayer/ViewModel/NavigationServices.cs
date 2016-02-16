@@ -45,5 +45,6 @@ namespace MusicPlayer.ViewModel
             var frame = (Frame)Window.Current.Content;
             frame.GoBack();
         }
+
     }
 }

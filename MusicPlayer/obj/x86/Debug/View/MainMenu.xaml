@@ -33,7 +33,7 @@
                         Width="70" Margin="0,0,50,0" Background="Orange" Foreground="White" 
                         FontWeight="Bold" HorizontalAlignment="Right" Visibility="{Binding SongLabelVisibility}"
                         FontSize="9" Command="{Binding AllSongsCommand}"/>
-                <ListView Grid.ColumnSpan="100" SelectedItem="{Binding SelectedSong}" Grid.Row="2" Grid.Column="0" BorderBrush="Transparent" ItemsSource="{Binding SongHits}">
+                <ListView Grid.ColumnSpan="100" Grid.Row="2" Grid.Column="0" BorderBrush="Transparent" ItemsSource="{Binding SongHits}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -74,7 +74,7 @@
 
 
                 <TextBlock Visibility="{Binding ArtistLabelVisibility}" Margin="35,20,0,0" Grid.Row="3" Grid.Column="0" Height="30" Text="Artists" FontWeight="Bold" FontSize="20"/>
-                <ListView Grid.ColumnSpan="100" SelectedItem="{Binding SelectedSong}" Grid.Row="4" Grid.Column="0" BorderBrush="Transparent" ItemsSource="{Binding ArtistHits}">
+                <ListView Grid.ColumnSpan="100" Grid.Row="4" Grid.Column="0" BorderBrush="Transparent" ItemsSource="{Binding ArtistHits}">
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Margin="20,15,0,0" Orientation="Horizontal"/>

@@ -104,6 +104,7 @@
     <Compile Include="Model\Entry.cs" />
     <Compile Include="Model\Hits.cs" />
     <Compile Include="Model\JsonParser.cs" />
+    <Compile Include="Model\NavigationHelper.cs" />
     <Compile Include="Model\Net\HttpCall.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="Model\Song.cs" />
