@@ -40,8 +40,9 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100"/>
                                     <ColumnDefinition Width="300"/>
-                                    <ColumnDefinition Width="100"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="1">
                                     <Grid.RowDefinitions>
@@ -50,22 +51,25 @@
                                     </Grid.RowDefinitions>
                                     <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Title}" HorizontalAlignment="Left" FontWeight="ExtraBold"/>
                                     <TextBlock Grid.Row="1" Text="{Binding Artist}" HorizontalAlignment="Left"/>
+                                    
                                 </Grid>
 
                                 <Grid Grid.Column="0">
                                     <Image Source="{Binding AlbumArtList[0].Url}" Height="50" Width="50"/>
                                 </Grid>
                                 <TextBlock Grid.Column="2" Grid.Row="0" Text="{Binding Duration}" Height="20" Width="50"/>
-                                <Button Grid.Column="3" CommandParameter="{Binding }" Command="{Binding DataContext.PlayCommand, ElementName=MainMenuPage}" 
+                                <Button Grid.Column="3" FontSize="15" FontFamily="Segoe Ui Symbol" Content="&#xe109;" 
+                                        Height="40" Width="50" HorizontalAlignment="Center" Background="White"
+                                        Command="{Binding DataContext.AddToQueueCommand, ElementName=MainMenuPage}" CommandParameter="{Binding }"/>
+                                <Button Grid.Column="4" CommandParameter="{Binding }" Command="{Binding DataContext.PlayCommand, ElementName=MainMenuPage}" 
                                 FontSize="15" FontFamily="Segoe Ui Symbol" Content="&#xE102;" 
-                                Height="30" Width="50" HorizontalAlignment="Center" Background="White"></Button>
+                                Height="40" Width="50" HorizontalAlignment="Center" Background="White"></Button>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
                 <TextBox Grid.Column="2" Height="30" Width="225" Text="{Binding Path=SearchQuery, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Tracks, Artists, Albums" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 <Button Grid.Column="2" Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Command="{Binding SearchCommand}" Content="Search"/>
-                <Button Grid.Column="2" Grid.Row="1" Height="30" Width="100" Command="{Binding PauseCommand}"  Content="Pause"/>
                 <TextBlock Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" Text="{Binding TimeElapsed, Converter={StaticResource TimeConverter}}"/>
 
 

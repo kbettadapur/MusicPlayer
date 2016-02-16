@@ -11,12 +11,12 @@
     <RootPropertyPathName Name="ArtistArtRef" />
     <RootPropertyPathName Name="ArtistLabelVisibility" />
     <RootPropertyPathName Name="TimeElapsed" />
-    <RootPropertyPathName Name="PauseCommand" />
     <RootPropertyPathName Name="SearchCommand" />
     <RootPropertyPathName Name="SearchQuery" />
     <RootPropertyPathName Name="SongHits" />
     <RootPropertyPathName Name="DataContext" />
     <RootPropertyPathName Name="PlayCommand" />
+    <RootPropertyPathName Name="AddToQueueCommand" />
     <RootPropertyPathName Name="Duration" />
     <RootPropertyPathName Name="AlbumArtList" />
     <RootPropertyPathName Name="Url" />
@@ -29,6 +29,7 @@
     <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="LoginCommand" />
     <RootPropertyPathName Name="Playing" />
+    <RootPropertyPathName Name="PauseCommand" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -111,8 +112,8 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="Command" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="CommandParameter" />
       <RootProperty Name="FontFamily" />
+      <RootProperty Name="CommandParameter" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Height" />

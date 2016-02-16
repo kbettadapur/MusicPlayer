@@ -15,10 +15,16 @@ namespace MusicPlayer.Model
         public bool Playing { get; set; }
         public DispatcherTimer timer { get; set; }
         private static Player Instance;
+        public List<Song> SongQueue { get; set; }
+        int currentSong;
 
         private Player()
         {
             Playing = false;
+            SongQueue = new List<Song>();
+           
+            currentSong = -1;
+            BackgroundMediaPlayer.Current.MediaEnded += MediaEndedEventHandler;
         }
 
         public static Player GetInstance()
@@ -35,9 +41,6 @@ namespace MusicPlayer.Model
             string streamUrl = await GetStreamUrl(parameter);
             BackgroundMediaPlayer.Current.SetUriSource(new Uri(streamUrl));
             BackgroundMediaPlayer.Current.Play();
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Start();
         }
 
         public void Resume()
@@ -64,6 +67,25 @@ namespace MusicPlayer.Model
                 MediaPlayer mp = BackgroundMediaPlayer.Current;
                 Resume();
                 Playing = true;
+            }
+        }
+
+        public void AddToQueue(Song parameter)
+        {
+            SongQueue.Add(parameter);
+            int x = 0;
+        }
+
+        void MediaEndedEventHandler(MediaPlayer mp, object parameter)
+        {
+            currentSong++;
+            if (currentSong == SongQueue.Count)
+            {
+                BackgroundMediaPlayer.Current.Pause();
+            }
+            else
+            {
+                Play(SongQueue[currentSong]);
             }
         }
     }

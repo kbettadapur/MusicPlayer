@@ -39,6 +39,7 @@ namespace MusicPlayer.ViewModel
         public DispatcherTimer timer { get; set; }
         public string TimeElapsed { get; set; }
         TotalJsonData AllHits;
+        public RelayCommand AddToQueueCommand { get; set; }
         
 
         public MainMenuViewModel()
@@ -51,6 +52,7 @@ namespace MusicPlayer.ViewModel
             SongLabelVisibility = "Collapsed";
             ArtistLabelVisibility = "Collapsed";
             BackgroundMediaPlayer.Current.MediaEnded += MediaEndedEventHandler;
+            AddToQueueCommand = new RelayCommand(AddToQueue);
         }
 
         public async void Search(object parameter)
@@ -96,6 +98,11 @@ namespace MusicPlayer.ViewModel
         public void NavigateToAllSongs(object parameter)
         {
             NavigationService.GetInstance().Navigate(typeof(AllSongsPage), SongHits);
+        }
+
+        public void AddToQueue(object parameter)
+        {
+            Player.GetInstance().AddToQueue((Song)parameter);
         }
 
         void MediaEndedEventHandler(MediaPlayer mp, object parameter)
