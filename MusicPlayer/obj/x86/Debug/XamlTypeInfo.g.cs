@@ -132,29 +132,33 @@ namespace MusicPlayer.MusicPlayer_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[10];
-            _typeNameTable[0] = "MusicPlayer.View.AllSongsPage";
+            _typeNameTable = new string[12];
+            _typeNameTable[0] = "MusicPlayer.View.AlbumPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "MusicPlayer.View.Converters.TimeConverter";
-            _typeNameTable[4] = "Object";
-            _typeNameTable[5] = "MusicPlayer.View.PlayerUserControl";
-            _typeNameTable[6] = "MusicPlayer.View.MainMenu";
-            _typeNameTable[7] = "MusicPlayer.View.MainPage";
-            _typeNameTable[8] = "MusicPlayer.View.Converters.PlayingConverter";
-            _typeNameTable[9] = "MusicPlayer.View.TrackControlUserControl";
+            _typeNameTable[3] = "MusicPlayer.View.AllSongsPage";
+            _typeNameTable[4] = "MusicPlayer.View.ArtistPage";
+            _typeNameTable[5] = "MusicPlayer.View.Converters.TimeConverter";
+            _typeNameTable[6] = "Object";
+            _typeNameTable[7] = "MusicPlayer.View.PlayerUserControl";
+            _typeNameTable[8] = "MusicPlayer.View.MainMenu";
+            _typeNameTable[9] = "MusicPlayer.View.MainPage";
+            _typeNameTable[10] = "MusicPlayer.View.Converters.PlayingConverter";
+            _typeNameTable[11] = "MusicPlayer.View.TrackControlUserControl";
 
-            _typeTable = new global::System.Type[10];
-            _typeTable[0] = typeof(global::MusicPlayer.View.AllSongsPage);
+            _typeTable = new global::System.Type[12];
+            _typeTable[0] = typeof(global::MusicPlayer.View.AlbumPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::MusicPlayer.View.Converters.TimeConverter);
-            _typeTable[4] = typeof(global::System.Object);
-            _typeTable[5] = typeof(global::MusicPlayer.View.PlayerUserControl);
-            _typeTable[6] = typeof(global::MusicPlayer.View.MainMenu);
-            _typeTable[7] = typeof(global::MusicPlayer.View.MainPage);
-            _typeTable[8] = typeof(global::MusicPlayer.View.Converters.PlayingConverter);
-            _typeTable[9] = typeof(global::MusicPlayer.View.TrackControlUserControl);
+            _typeTable[3] = typeof(global::MusicPlayer.View.AllSongsPage);
+            _typeTable[4] = typeof(global::MusicPlayer.View.ArtistPage);
+            _typeTable[5] = typeof(global::MusicPlayer.View.Converters.TimeConverter);
+            _typeTable[6] = typeof(global::System.Object);
+            _typeTable[7] = typeof(global::MusicPlayer.View.PlayerUserControl);
+            _typeTable[8] = typeof(global::MusicPlayer.View.MainMenu);
+            _typeTable[9] = typeof(global::MusicPlayer.View.MainPage);
+            _typeTable[10] = typeof(global::MusicPlayer.View.Converters.PlayingConverter);
+            _typeTable[11] = typeof(global::MusicPlayer.View.TrackControlUserControl);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -189,13 +193,15 @@ namespace MusicPlayer.MusicPlayer_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_AllSongsPage() { return new global::MusicPlayer.View.AllSongsPage(); }
-        private object Activate_3_TimeConverter() { return new global::MusicPlayer.View.Converters.TimeConverter(); }
-        private object Activate_5_PlayerUserControl() { return new global::MusicPlayer.View.PlayerUserControl(); }
-        private object Activate_6_MainMenu() { return new global::MusicPlayer.View.MainMenu(); }
-        private object Activate_7_MainPage() { return new global::MusicPlayer.View.MainPage(); }
-        private object Activate_8_PlayingConverter() { return new global::MusicPlayer.View.Converters.PlayingConverter(); }
-        private object Activate_9_TrackControlUserControl() { return new global::MusicPlayer.View.TrackControlUserControl(); }
+        private object Activate_0_AlbumPage() { return new global::MusicPlayer.View.AlbumPage(); }
+        private object Activate_3_AllSongsPage() { return new global::MusicPlayer.View.AllSongsPage(); }
+        private object Activate_4_ArtistPage() { return new global::MusicPlayer.View.ArtistPage(); }
+        private object Activate_5_TimeConverter() { return new global::MusicPlayer.View.Converters.TimeConverter(); }
+        private object Activate_7_PlayerUserControl() { return new global::MusicPlayer.View.PlayerUserControl(); }
+        private object Activate_8_MainMenu() { return new global::MusicPlayer.View.MainMenu(); }
+        private object Activate_9_MainPage() { return new global::MusicPlayer.View.MainPage(); }
+        private object Activate_10_PlayingConverter() { return new global::MusicPlayer.View.Converters.PlayingConverter(); }
+        private object Activate_11_TrackControlUserControl() { return new global::MusicPlayer.View.TrackControlUserControl(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -207,9 +213,9 @@ namespace MusicPlayer.MusicPlayer_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  MusicPlayer.View.AllSongsPage
+            case 0:   //  MusicPlayer.View.AlbumPage
                 userType = new global::MusicPlayer.MusicPlayer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_AllSongsPage;
+                userType.Activator = Activate_0_AlbumPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -222,48 +228,62 @@ namespace MusicPlayer.MusicPlayer_XamlTypeInfo
                 xamlType = new global::MusicPlayer.MusicPlayer_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  MusicPlayer.View.Converters.TimeConverter
-                userType = new global::MusicPlayer.MusicPlayer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_3_TimeConverter;
+            case 3:   //  MusicPlayer.View.AllSongsPage
+                userType = new global::MusicPlayer.MusicPlayer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_AllSongsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  Object
+            case 4:   //  MusicPlayer.View.ArtistPage
+                userType = new global::MusicPlayer.MusicPlayer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_ArtistPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  MusicPlayer.View.Converters.TimeConverter
+                userType = new global::MusicPlayer.MusicPlayer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_5_TimeConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  Object
                 xamlType = new global::MusicPlayer.MusicPlayer_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  MusicPlayer.View.PlayerUserControl
+            case 7:   //  MusicPlayer.View.PlayerUserControl
                 userType = new global::MusicPlayer.MusicPlayer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_5_PlayerUserControl;
+                userType.Activator = Activate_7_PlayerUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  MusicPlayer.View.MainMenu
+            case 8:   //  MusicPlayer.View.MainMenu
                 userType = new global::MusicPlayer.MusicPlayer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_MainMenu;
+                userType.Activator = Activate_8_MainMenu;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  MusicPlayer.View.MainPage
+            case 9:   //  MusicPlayer.View.MainPage
                 userType = new global::MusicPlayer.MusicPlayer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_MainPage;
+                userType.Activator = Activate_9_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  MusicPlayer.View.Converters.PlayingConverter
+            case 10:   //  MusicPlayer.View.Converters.PlayingConverter
                 userType = new global::MusicPlayer.MusicPlayer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_8_PlayingConverter;
+                userType.Activator = Activate_10_PlayingConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  MusicPlayer.View.TrackControlUserControl
+            case 11:   //  MusicPlayer.View.TrackControlUserControl
                 userType = new global::MusicPlayer.MusicPlayer_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_9_TrackControlUserControl;
+                userType.Activator = Activate_11_TrackControlUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

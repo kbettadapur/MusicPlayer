@@ -14,6 +14,9 @@ namespace MusicPlayer.Model
             return JsonConvert.DeserializeObject<TotalJsonData>(stringToParse);
         }
 
-        
+        public static Album ParseAlbum(string stringToParse)
+        {
+            return JsonConvert.DeserializeObject<Album>(stringToParse);
+        }
     }
 }

@@ -98,6 +98,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Album.cs" />
     <Compile Include="Model\AlbumArt.cs" />
     <Compile Include="Model\Artist.cs" />
     <Compile Include="Model\Auth.cs" />
@@ -108,14 +109,23 @@
     <Compile Include="Model\Net\HttpCall.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="Model\Song.cs" />
+    <Compile Include="Model\TotalAlbumData.cs" />
+    <Compile Include="ViewModel\AlbumViewModel.cs" />
+    <Compile Include="ViewModel\ArtistViewModel.cs" />
     <Compile Include="ViewModel\PlayerControl.cs" />
+    <Compile Include="View\AlbumPage.xaml.cs">
+      <DependentUpon>AlbumPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArtistPage.xaml.cs">
+      <DependentUpon>ArtistPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Converters\PlayingConverter.cs" />
     <Compile Include="View\Converters\TimeConverter.cs" />
     <Compile Include="Model\TotalJsonData.cs" />
     <Compile Include="ViewModel\AllSongsViewModel.cs" />
     <Compile Include="ViewModel\INavigationService.cs" />
     <Compile Include="ViewModel\MainMenuViewModel.cs" />
-    <Compile Include="ViewModel\NavigationServices.cs" />
+    <Compile Include="ViewModel\NavigationService.cs" />
     <Compile Include="View\AllSongsPage.xaml.cs">
       <DependentUpon>AllSongsPage.xaml</DependentUpon>
     </Compile>
@@ -159,7 +169,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\AlbumPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AllSongsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ArtistPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

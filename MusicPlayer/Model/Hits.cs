@@ -45,5 +45,24 @@ namespace MusicPlayer.Model
             }
             return ArtistHits;
         }
+
+        public static List<Album> GetAlbumHits(List<Entry> entries, int numResults)
+        {
+            int albumCounter = 0;
+            List<Album> AlbumHits = new List<Album>();
+            foreach (Entry e in entries)
+            {
+                if (e.album != null)
+                {
+                    AlbumHits.Add(e.album);
+                    albumCounter++;
+                }
+                if (albumCounter == numResults)
+                {
+                    break;
+                }
+            }
+            return AlbumHits;
+        }
     }
 }

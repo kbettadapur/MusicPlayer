@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Web.Http;
+using MusicPlayer.Model.Net;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -61,7 +63,12 @@ namespace MusicPlayer.View
             _isNewPageInstance = false;
         }
 
-
+        void NavigateToArtist(object sender, SelectionChangedEventArgs e)
+        {
+            ListView lv = (ListView)sender;
+            Artist lvi = (Artist)lv.SelectedItem;
+            NavigationService.GetInstance().Navigate(typeof(ArtistPage), lvi);
+        }
 
     }
 }

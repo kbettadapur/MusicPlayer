@@ -26,6 +26,8 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 
                 <TextBlock Visibility="{Binding SongLabelVisibility}" Margin="35,0,0,0" Grid.Row="1" Grid.Column="0" Text="Songs" FontWeight="Bold" FontSize="20"/>
@@ -61,7 +63,7 @@
                                 <Button Grid.Column="3" FontSize="15" FontFamily="Segoe Ui Symbol" Content="&#xe109;" 
                                         Height="40" Width="50" HorizontalAlignment="Center" Background="White"
                                         Command="{Binding DataContext.AddToQueueCommand, ElementName=MainMenuPage}" CommandParameter="{Binding }"/>
-                                <Button Grid.Column="4" CommandParameter="{Binding }" Command="{Binding DataContext.PlayCommand, ElementName=MainMenuPage}" 
+                                <Button Grid.Column="4" CommandParameter="{Binding }" Command="{Binding DataContext.PlayOverrideQueueCommand, ElementName=MainMenuPage}" 
                                 FontSize="15" FontFamily="Segoe Ui Symbol" Content="&#xE102;" 
                                 Height="40" Width="50" HorizontalAlignment="Center" Background="White"></Button>
                             </Grid>
@@ -74,7 +76,7 @@
 
 
                 <TextBlock Visibility="{Binding ArtistLabelVisibility}" Margin="35,20,0,0" Grid.Row="3" Grid.Column="0" Height="30" Text="Artists" FontWeight="Bold" FontSize="20"/>
-                <ListView Grid.ColumnSpan="100" Grid.Row="4" Grid.Column="0" BorderBrush="Transparent" ItemsSource="{Binding ArtistHits}">
+                <ListView x:ConnectionId='2' Grid.ColumnSpan="100"                                     SelectedItem="{Binding SelectedArtist}" Grid.Row="4" Grid.Column="0" IsItemClickEnabled="True" BorderBrush="Transparent" ItemsSource="{Binding ArtistHits}">
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Margin="20,15,0,0" Orientation="Horizontal"/>
@@ -91,6 +93,31 @@
                                 <Image Source="{Binding ArtistArtRef}" Grid.Row="0" Height="50" Width="100" VerticalAlignment="Bottom"/>
 
                                 <TextBlock Text="{Binding ArtistName}" Height="30" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <TextBlock Margin="35,20,0,0" FontSize="20" Visibility="{Binding AlbumLabelVisibility}" HorizontalAlignment="Left" Grid.Row="5" Text="Albums" FontWeight="Bold" Height="30" Width="100"/>
+                <ListView Grid.ColumnSpan="100" Grid.Row="6" Grid.Column="0" IsItemClickEnabled="True" BorderBrush="Transparent" ItemsSource="{Binding AlbumHits}">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Margin="20,15,0,0" Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <Image Source="{Binding AlbumArtRef}" Grid.Row="0" Height="100" Width="100" VerticalAlignment="Bottom"/>
+                                <Button Content="" Grid.Row="0" Height="100" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" CommandParameter="{Binding }" 
+                                        Command="{Binding DataContext.NavigateToAlbumCommand, ElementName=MainMenuPage}"/>
+                                <TextBlock Text="{Binding AlbumName}" Height="30" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="ExtraBold"/>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>

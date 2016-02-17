@@ -4,16 +4,26 @@
     <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
-    <RootPropertyPathName Name="SongHits" />
+    <RootPropertyPathName Name="SongList" />
     <RootPropertyPathName Name="DataContext" />
-    <RootPropertyPathName Name="PlayCommand" />
+    <RootPropertyPathName Name="PlayOverrideQueueCommand" />
     <RootPropertyPathName Name="AddToQueueCommand" />
     <RootPropertyPathName Name="Duration" />
-    <RootPropertyPathName Name="AlbumArtList" />
-    <RootPropertyPathName Name="Url" />
     <RootPropertyPathName Name="Artist" />
     <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="AlbumArtist" />
+    <RootPropertyPathName Name="AlbumTitle" />
     <RootPropertyPathName Name="GoBackCommand" />
+    <RootPropertyPathName Name="AlbumArtRef" />
+    <RootPropertyPathName Name="SongHits" />
+    <RootPropertyPathName Name="PlayCommand" />
+    <RootPropertyPathName Name="AlbumArtList" />
+    <RootPropertyPathName Name="Url" />
+    <RootPropertyPathName Name="AlbumHits" />
+    <RootPropertyPathName Name="AlbumName" />
+    <RootPropertyPathName Name="NavigateToAlbumCommand" />
+    <RootPropertyPathName Name="AlbumLabelVisibility" />
+    <RootPropertyPathName Name="SelectedArtist" />
     <RootPropertyPathName Name="ArtistHits" />
     <RootPropertyPathName Name="ArtistName" />
     <RootPropertyPathName Name="ArtistArtRef" />
@@ -39,21 +49,32 @@
       <RootProperty Name="Resources" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
-      <RootProperty Name="RowDefinitions" />
-      <RootProperty Name="Children" />
-      <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Background" />
+      <RootProperty Name="RowDefinitions" />
+      <RootProperty Name="ColumnDefinitions" />
+      <RootProperty Name="Children" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
-      <RootMethod Name="GetColumnSpan" />
-      <RootMethod Name="SetColumnSpan" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
       <RootMethod Name="GetRowSpan" />
       <RootMethod Name="SetRowSpan" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
+      <RootProperty Name="Width" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Source" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Stretch" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Height" />
@@ -71,11 +92,19 @@
       <RootProperty Name="Visibility" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="Content" />
+      <RootMethod Name="GetIsVerticalRailEnabled" />
+      <RootMethod Name="SetIsVerticalRailEnabled" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="SelectedItem" />
+      <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemsPanel" />
+      <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="ElementName" />
@@ -87,35 +116,22 @@
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
-      <RootProperty Name="Width" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Text" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="FontWeight" />
-      <RootProperty Name="Visibility" />
       <RootProperty Name="Margin" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Visibility" />
       <RootProperty Name="Foreground" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Image">
-      <RootProperty Name="Source" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Stretch" />
-    </RootType>
+    <RootType FullName="MusicPlayer.View.AlbumPage" />
     <RootType FullName="MusicPlayer.View.AllSongsPage" />
+    <RootType FullName="MusicPlayer.View.ArtistPage" />
     <RootType FullName="MusicPlayer.View.Converters.TimeConverter" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="Content" />
-      <RootMethod Name="GetIsVerticalRailEnabled" />
-      <RootMethod Name="SetIsVerticalRailEnabled" />
-    </RootType>
     <RootType FullName="MusicPlayer.View.PlayerUserControl">
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />

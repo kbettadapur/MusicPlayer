@@ -217,3 +217,13 @@ C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\PlayerUserControl.g.cs
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\PlayerUserControl.xaml
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\PlayerUserControl.xbf
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\View\ArtistPage.xbf
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\ArtistPage.g.i.cs
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\ArtistPage.g.cs
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\ArtistPage.xaml
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\ArtistPage.xbf
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\View\AlbumPage.xbf
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\AlbumPage.g.i.cs
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\AlbumPage.g.cs
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\AlbumPage.xaml
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\AlbumPage.xbf

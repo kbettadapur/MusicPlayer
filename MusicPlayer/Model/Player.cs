@@ -43,6 +43,16 @@ namespace MusicPlayer.Model
             BackgroundMediaPlayer.Current.Play();
         }
 
+        public async void PlayOverrideQueue(object parameter)
+        {
+            SongQueue.Add((Song)parameter);
+            CurrentSong = SongQueue.Count - 1;
+            string streamUrl = await GetStreamUrl(SongQueue[CurrentSong]);
+            BackgroundMediaPlayer.Current.SetUriSource(new Uri(streamUrl));
+            BackgroundMediaPlayer.Current.Volume = BackgroundMediaPlayer.Current.Volume / 2;
+            BackgroundMediaPlayer.Current.Play();
+        }
+
         public void Resume()
         {
             BackgroundMediaPlayer.Current.Play();
@@ -56,7 +66,24 @@ namespace MusicPlayer.Model
 
         public void Pause(object parameter)
         {
-            if (BackgroundMediaPlayer.Current.CurrentState == MediaPlayerState.Playing)
+            if (CurrentSong == -1)
+            {
+                if (SongQueue.Count == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    CurrentSong++;
+                    Play(SongQueue[CurrentSong]);
+                    Playing = true;
+                }
+            } else if (CurrentSong == SongQueue.Count)
+            {
+                CurrentSong = 0;
+                Play(SongQueue[CurrentSong]);
+            }
+            else if (BackgroundMediaPlayer.Current.CurrentState == MediaPlayerState.Playing)
             {
                 MediaPlayer mp = BackgroundMediaPlayer.Current;
                 Playing = false;
@@ -73,7 +100,6 @@ namespace MusicPlayer.Model
         public void AddToQueue(Song parameter)
         {
             SongQueue.Add(parameter);
-            int x = 0;
         }
 
         void MediaEndedEventHandler(MediaPlayer mp, object parameter)
@@ -87,6 +113,7 @@ namespace MusicPlayer.Model
             {
                 Play(SongQueue[CurrentSong]);
             }
+            mp = BackgroundMediaPlayer.Current;
         }
     }
 }

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using MusicPlayer.Model;
-using MusicPlayer.View;
+
 namespace MusicPlayer.ViewModel
 {
     public class AllSongsViewModel
@@ -34,7 +30,6 @@ namespace MusicPlayer.ViewModel
 
         public void Play(object parameter)
         {
-            int x = 0;
             Player.GetInstance().Play(parameter);
         }
     }

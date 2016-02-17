@@ -13,5 +13,7 @@ namespace MusicPlayer.Model
         public Song song { get; set; }
         [JsonProperty("artist")]
         public Artist artist { get; set; }
+        [JsonProperty("album")]
+        public Album album { get; set; }
     }
 }
