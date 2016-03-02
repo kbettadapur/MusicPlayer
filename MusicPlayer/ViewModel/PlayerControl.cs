@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MusicPlayer.Model;
 using Windows.Media.Playback;
+using Windows.UI.Xaml;
 
 namespace MusicPlayer.ViewModel
 {
@@ -12,16 +13,16 @@ namespace MusicPlayer.ViewModel
     {
         public static Boolean Playing { get; set; }
         public RelayCommand PauseCommand { get; set; }
+        public string CurrentTime { get; set; }
+        public DispatcherTimer timer { get; set; }
+        
         public PlayerControl()
         {
-            //Player.GetInstance().timer.Tick += TickEventHandler;
+            timer = new DispatcherTimer();
+            timer.Tick += TickEventHandler;
+            timer.Start();
             PauseCommand = new RelayCommand(Pause);
-            Playing = true;
-        }
-
-        void TickEventHandler(object sender, object e)
-        {
-
+            Playing = false;
         }
 
         public void Pause(object parameter)
@@ -39,5 +40,10 @@ namespace MusicPlayer.ViewModel
             Player.GetInstance().Pause(parameter);
         }
 
+        public void TickEventHandler(object sender, object e)
+        {
+            CurrentTime = BackgroundMediaPlayer.Current.Position.ToString();
+            OnPropertyChanged("CurrentTime");
+        }
     }
 }

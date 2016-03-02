@@ -13,6 +13,8 @@ namespace MusicPlayer.Model
         public string Title { get; set; }
         [JsonProperty("artist")]
         public string Artist { get; set; }
+        [JsonProperty("album")]
+        public string Album { get; set; }
         [JsonProperty("albumArtRef")]
         public List<AlbumArt> AlbumArtList { get; set; }
         [JsonProperty("nid")]

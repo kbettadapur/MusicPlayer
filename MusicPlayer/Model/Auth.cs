@@ -38,7 +38,7 @@ namespace MusicPlayer.Model
                 loginSuccessful = false;
                 return loginSuccessful;
             }
-
+            int x = 0;
             var token = res["Token"];
             res = await client.PerformOAuth("5453EDB5AAC9", token, "sj", "com.google.android.music", "38918a453d07199354f8b19af05ec6562ced5788");
             var authToken1 = res["Auth"];

@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-02-17T21:27:41.958</Modified>
+      <Modified>2016-03-01T21:57:40.294</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\MusicPlayer.exe">
       <PackagePath>entrypoint\MusicPlayer.exe</PackagePath>
-      <Modified>2016-02-17T21:27:41.223</Modified>
+      <Modified>2016-03-01T21:57:39.875</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kirin\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -514,7 +514,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\MusicPlayer.xr.xml">
       <PackagePath>MusicPlayer.xr.xml</PackagePath>
-      <Modified>2016-02-17T21:16:35.862</Modified>
+      <Modified>2016-03-01T03:00:57.819</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -522,11 +522,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-02-17T21:27:41.798</Modified>
+      <Modified>2016-03-01T03:12:09.373</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\Core\MusicPlayer.exe">
       <PackagePath>MusicPlayer.exe</PackagePath>
-      <Modified>2016-02-17T21:27:41.956</Modified>
+      <Modified>2016-03-01T21:57:40.292</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

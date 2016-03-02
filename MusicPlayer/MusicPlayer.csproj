@@ -119,8 +119,8 @@
     <Compile Include="View\ArtistPage.xaml.cs">
       <DependentUpon>ArtistPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Converters\PlayingConverter.cs" />
     <Compile Include="View\Converters\TimeConverter.cs" />
+    <Compile Include="View\Converters\PlayingConverter.cs" />
     <Compile Include="Model\TotalJsonData.cs" />
     <Compile Include="ViewModel\AllSongsViewModel.cs" />
     <Compile Include="ViewModel\INavigationService.cs" />

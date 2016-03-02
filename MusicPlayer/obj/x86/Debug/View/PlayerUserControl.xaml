@@ -11,12 +11,14 @@
     d:DesignWidth="400">
     <UserControl.Resources>
         <cv:PlayingConverter x:Key="PlayingConverter"/>
+        <cv:TimeConverter x:Key="TimeConverter"/>
     </UserControl.Resources>
 
-    <StackPanel Orientation="Horizontal" Background="White">
-        <Button Width="100" Height="50" Content="&#x23EE;" FontSize="30" FontFamily="Segoe UI Symbol" Margin="330,0,0,0"/>
-        <Button Width="100" Height="50" Content="{Binding Playing, Converter={StaticResource PlayingConverter}}" FontSize="30" FontFamily="Segoe UI Symbol" Command="{Binding PauseCommand}" Margin="25,0,0,0"/>
-        <Button Width="100" Height="50" Content="&#x23ED;" FontSize="30" FontFamily="Segoe UI Symbol " Margin="25,0,0,0"/>
+    <StackPanel Height="60" Orientation="Horizontal">
+        <TextBlock Text="{Binding CurrentTime, Converter={StaticResource TimeConverter}}" Height="30" Width="90" Margin="0,0,0,0" VerticalAlignment="Top"/>
+        <Button Width="100" Height="50" Content="&#x23EE;" FontSize="30" FontFamily="Segoe UI Symbol" Margin="240,0,0,0" VerticalAlignment="Bottom"/>
+        <Button Width="100" Height="50" Content="{Binding Playing, Converter={StaticResource PlayingConverter}}" FontSize="30" VerticalAlignment="Bottom" FontFamily="Segoe UI Symbol" Command="{Binding PauseCommand}" Margin="25,0,0,0"/>
+        <Button Width="100" Height="50" Content="&#x23ED;" FontSize="30" FontFamily="Segoe UI Symbol" VerticalAlignment="Bottom" Margin="25,0,0,0"/>
     </StackPanel>
 </UserControl>
 

@@ -1,19 +1,14 @@
 ﻿using MusicPlayer.Model.Net;
-using MusicPlayer.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Windows.Media.Playback;
-using Windows.UI.Xaml;
 
 namespace MusicPlayer.Model
 {
     public class Player
     {
         public bool Playing { get; set; }
-        public DispatcherTimer timer { get; set; }
         private static Player Instance;
         public List<Song> SongQueue { get; set; }
         public int CurrentSong { get; set; }
@@ -22,7 +17,6 @@ namespace MusicPlayer.Model
         {
             Playing = false;
             SongQueue = new List<Song>();
-           
             CurrentSong = -1;
             BackgroundMediaPlayer.Current.MediaEnded += MediaEndedEventHandler;
         }
@@ -49,13 +43,9 @@ namespace MusicPlayer.Model
             CurrentSong = SongQueue.Count - 1;
             string streamUrl = await GetStreamUrl(SongQueue[CurrentSong]);
             BackgroundMediaPlayer.Current.SetUriSource(new Uri(streamUrl));
-            BackgroundMediaPlayer.Current.Volume = BackgroundMediaPlayer.Current.Volume / 2;
+            BackgroundMediaPlayer.Current.Volume = BackgroundMediaPlayer.Current.Volume;
             BackgroundMediaPlayer.Current.Play();
-        }
-
-        public void Resume()
-        {
-            BackgroundMediaPlayer.Current.Play();
+            
         }
 
         private async Task<string> GetStreamUrl(object parameter)
@@ -76,7 +66,6 @@ namespace MusicPlayer.Model
                 {
                     CurrentSong++;
                     Play(SongQueue[CurrentSong]);
-                    Playing = true;
                 }
             } else if (CurrentSong == SongQueue.Count)
             {
@@ -92,8 +81,7 @@ namespace MusicPlayer.Model
             else
             {
                 MediaPlayer mp = BackgroundMediaPlayer.Current;
-                Resume();
-                Playing = true;
+                mp.Play();
             }
         }
 
@@ -113,7 +101,6 @@ namespace MusicPlayer.Model
             {
                 Play(SongQueue[CurrentSong]);
             }
-            mp = BackgroundMediaPlayer.Current;
         }
     }
 }

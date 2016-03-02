@@ -9,47 +9,51 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
+        <ScrollViewer>
+            <Grid ScrollViewer.IsVerticalRailEnabled="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
 
-        <Button Grid.Row="0" Height="50" Width="50" FontFamily="Segoe Ui Symbol" Command="{Binding GoBackCommand}" Content="&#xe112;"/>
-        <ListView Grid.ColumnSpan="100" Grid.Row="2" Grid.Column="0" BorderBrush="Transparent" ItemsSource="{Binding SongHits}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="300"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Title}" HorizontalAlignment="Left" FontWeight="ExtraBold"/>
-                            <TextBlock Grid.Row="1" Text="{Binding Artist}" HorizontalAlignment="Left"/>
+                <Button Grid.Row="0" Height="50" Width="50" FontFamily="Segoe Ui Symbol" Command="{Binding GoBackCommand}" Content="&#xe112;"/>
+                <ListView ScrollViewer.IsVerticalRailEnabled="True" Grid.Row="1" Grid.ColumnSpan="100" Grid.RowSpan="100" BorderBrush="Transparent" ItemsSource="{Binding SongHits}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="300"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Title}" HorizontalAlignment="Left" FontWeight="ExtraBold"/>
+                                    <TextBlock Grid.Row="1" Text="{Binding Artist}" HorizontalAlignment="Left"/>
 
-                        </Grid>
+                                </Grid>
 
-                        <Grid Grid.Column="0">
-                            <Image Source="{Binding AlbumArtList[0].Url}" Height="50" Width="50"/>
-                        </Grid>
-                        <TextBlock Grid.Column="2" Grid.Row="0" Text="{Binding Duration}" Height="20" Width="50"/>
-                        <Button Grid.Column="3" FontSize="15" FontFamily="Segoe Ui Symbol" Content="&#xe109;" 
+                                <Grid Grid.Column="0">
+                                    <Image Source="{Binding AlbumArtList[0].Url}" Height="50" Width="50"/>
+                                </Grid>
+                                <TextBlock Grid.Column="2" Grid.Row="0" Text="{Binding Duration}" Height="20" Width="50"/>
+                                <Button Grid.Column="3" FontSize="15" FontFamily="Segoe Ui Symbol" Content="&#xe109;" 
                                         Height="40" Width="50" HorizontalAlignment="Center" Background="White"
                                         Command="{Binding DataContext.AddToQueueCommand, ElementName=AllSongs}" CommandParameter="{Binding }"/>
-                        <Button Grid.Column="4" CommandParameter="{Binding }" Command="{Binding DataContext.PlayCommand, ElementName=AllSongs}" 
+                                <Button Grid.Column="4" CommandParameter="{Binding }" Command="{Binding DataContext.PlayCommand, ElementName=AllSongs}" 
                                 FontSize="15" FontFamily="Segoe Ui Symbol" Content="&#xE102;" 
                                 Height="40" Width="50" HorizontalAlignment="Center" Background="White"></Button>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>
 

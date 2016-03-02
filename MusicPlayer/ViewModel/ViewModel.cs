@@ -18,10 +18,11 @@ namespace MusicPlayer.ViewModel
 
         protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
         {
-            PropertyChanged(this, e);
+            if (PropertyChanged != null) { PropertyChanged(this, e); }
         }
         protected virtual void OnPropertyChanged(string property)
         {
+            
             OnPropertyChanged(new PropertyChangedEventArgs(property));
         }
     }
