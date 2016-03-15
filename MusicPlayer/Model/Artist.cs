@@ -17,5 +17,7 @@ namespace MusicPlayer.Model
         public string ArtistId { get; set; }
         [JsonProperty("topTracks")]
         public List<Song> TopTracks { get; set; }
+        [JsonProperty("albums")]
+        public List<Album> ArtistAlbums { get; set; }
     }
 }

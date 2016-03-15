@@ -12,9 +12,11 @@ namespace MusicPlayer.ViewModel
         public Artist CurrentArtist { get; set; }
         public string ArtistName { get; set; }
         public string ArtistArtRef { get; set; }
-        public List<Song> ArtistSongs { get; set; }
         public string AlbumArtRef { get; set; }
+        public List<Song> ArtistSongs { get; set; }
         public List<Song> ArtistTopFive { get; set; }
+        public List<Album> ArtistAlbums { get; set; }
+        public List<Album> TopFiveAlbums { get; set; }
         public RelayCommand GoBackCommand { get; set; }
         public RelayCommand PlayOverrideQueueCommand { get; set; }
         public RelayCommand AddToQueueCommand { get; set; }
@@ -26,10 +28,19 @@ namespace MusicPlayer.ViewModel
             ArtistArtRef = CurrentArtist.ArtistArtRef;
             ArtistSongs = CurrentArtist.TopTracks;
             ArtistTopFive = new List<Song>();
-            for (int i = 0; i < 5; i++) { ArtistTopFive.Add(ArtistSongs[i]); }
+            if (ArtistSongs != null)
+            {
+                for (int i = 0; i < 5 && i < ArtistSongs.Count; i++) { ArtistTopFive.Add(ArtistSongs[i]); }
+            }
             GoBackCommand = new RelayCommand(GoBack);
             PlayOverrideQueueCommand = new RelayCommand(PlayOverrideQueue);
             AddToQueueCommand = new RelayCommand(AddToQueue);
+            ArtistAlbums = CurrentArtist.ArtistAlbums;
+            TopFiveAlbums = new List<Album>();
+            if (ArtistAlbums != null)
+            {
+                for (int i = 0; i < 5 && i < ArtistAlbums.Count; i++) { TopFiveAlbums.Add(ArtistAlbums[i]); }
+            }
         }
 
         public void GoBack(object parameter)

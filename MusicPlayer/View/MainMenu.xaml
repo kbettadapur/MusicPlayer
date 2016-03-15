@@ -17,25 +17,27 @@
         <ScrollViewer>
             <Grid ScrollViewer.IsVerticalRailEnabled="True">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="700"/>
+                    <ColumnDefinition Width="650"/>
+                    <ColumnDefinition Width="325"/>
                     <ColumnDefinition Width="*"/>
+                    
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="150"/>
                 </Grid.RowDefinitions>
-                
+
                 <TextBlock Visibility="{Binding SongLabelVisibility}" Margin="35,0,0,0" Grid.Row="1" Grid.Column="0" Text="Songs" FontWeight="Bold" FontSize="20"/>
                 <Button Content="All Songs" Grid.Row="1" Grid.Column="0" Height="25" 
                         Width="70" Margin="0,0,50,0" Background="Orange" Foreground="White" 
                         FontWeight="Bold" HorizontalAlignment="Right" Visibility="{Binding SongLabelVisibility}"
                         FontSize="9" Command="{Binding AllSongsCommand}"/>
-                <ListView Grid.ColumnSpan="100" Grid.Row="2" Grid.Column="0" BorderBrush="Transparent" ItemsSource="{Binding SongHits}">
+                <ListView Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="0" BorderBrush="Transparent" ItemsSource="{Binding SongHits}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -53,7 +55,7 @@
                                     </Grid.RowDefinitions>
                                     <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Title}" HorizontalAlignment="Left" FontWeight="ExtraBold"/>
                                     <TextBlock Grid.Row="1" Text="{Binding Artist}" HorizontalAlignment="Left"/>
-                                    
+
                                 </Grid>
 
                                 <Grid Grid.Column="0">
@@ -70,9 +72,9 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <TextBox Grid.Column="2" Height="30" Width="225" Text="{Binding Path=SearchQuery, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Tracks, Artists, Albums" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <Button Grid.Column="2" Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Command="{Binding SearchCommand}" Content="Search"/>
-
+                <TextBox Grid.Column="1" Height="30" Width="225" Text="{Binding Path=SearchQuery, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Tracks, Artists, Albums" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Button Grid.Column="1" Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Command="{Binding SearchCommand}" Content="Search"/>
+                <views:QueueUserControl Grid.Row="2" Grid.Column="1" Grid.RowSpan="2"/>
                 <TextBlock Visibility="{Binding ArtistLabelVisibility}" Margin="35,20,0,0" Grid.Row="3" Grid.Column="0" Height="30" Text="Artists" FontWeight="Bold" FontSize="20"/>
                 <ListView Grid.ColumnSpan="100" SelectionChanged="NavigateToArtist" Grid.Row="4" Grid.Column="0" IsItemClickEnabled="True" BorderBrush="Transparent" ItemsSource="{Binding ArtistHits}">
                     <ListView.ItemsPanel>
@@ -106,7 +108,7 @@
                     </ListView.ItemsPanel>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            
+
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>

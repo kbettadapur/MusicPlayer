@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicPlayer.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,11 +18,12 @@ using Windows.UI.Xaml.Navigation;
 
 namespace MusicPlayer.View
 {
-    public sealed partial class TrackControlUserControl : UserControl
+    public sealed partial class QueueUserControl : UserControl
     {
-        public TrackControlUserControl()
+        public QueueUserControl()
         {
             this.InitializeComponent();
+            DataContext = QueueControl.GetInstance();
         }
     }
 }

@@ -3,7 +3,6 @@ C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\View\AllSongsPage.xbf
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\View\MainMenu.xbf
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\View\MainPage.xbf
-C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\View\TrackControlUserControl.xbf
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\MusicPlayer.xr.xml
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\MusicPlayer.exe
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\MusicPlayer.pdb
@@ -129,19 +128,15 @@ C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\MainMenu.g.cs
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\MainPage.g.i.cs
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\MainPage.g.cs
-C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\TrackControlUserControl.g.i.cs
-C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\TrackControlUserControl.g.cs
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\XamlTypeInfo.g.cs
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\App.xaml
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\AllSongsPage.xaml
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\MainMenu.xaml
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\MainPage.xaml
-C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\TrackControlUserControl.xaml
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\App.xbf
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\AllSongsPage.xbf
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\MainMenu.xbf
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\MainPage.xbf
-C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\TrackControlUserControl.xbf
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\XamlSaveStateFile.xml
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\MusicPlayer.exe
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\MusicPlayer.pdb
@@ -227,3 +222,8 @@ C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\AlbumPage.g.cs
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\AlbumPage.xaml
 C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\AlbumPage.xbf
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\View\QueueUserControl.xbf
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\QueueUserControl.g.i.cs
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\QueueUserControl.g.cs
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\QueueUserControl.xaml
+C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\View\QueueUserControl.xbf

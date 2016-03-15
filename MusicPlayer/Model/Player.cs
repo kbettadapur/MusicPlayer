@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.Media.Playback;
+using MusicPlayer.ViewModel;
+using System.Collections.ObjectModel;
 
 namespace MusicPlayer.Model
 {
@@ -10,13 +12,13 @@ namespace MusicPlayer.Model
     {
         public bool Playing { get; set; }
         private static Player Instance;
-        public List<Song> SongQueue { get; set; }
+        public ObservableCollection<Song> SongQueue { get; set; }
         public int CurrentSong { get; set; }
 
         private Player()
         {
-            Playing = false;
-            SongQueue = new List<Song>();
+            Playing = true;
+            SongQueue = new ObservableCollection<Song>();
             CurrentSong = -1;
             BackgroundMediaPlayer.Current.MediaEnded += MediaEndedEventHandler;
         }
@@ -35,6 +37,7 @@ namespace MusicPlayer.Model
             string streamUrl = await GetStreamUrl(parameter);
             BackgroundMediaPlayer.Current.SetUriSource(new Uri(streamUrl));
             BackgroundMediaPlayer.Current.Play();
+            PlayerControl.GetInstance().UpdatePlaying();
         }
 
         public async void PlayOverrideQueue(object parameter)
@@ -45,7 +48,8 @@ namespace MusicPlayer.Model
             BackgroundMediaPlayer.Current.SetUriSource(new Uri(streamUrl));
             BackgroundMediaPlayer.Current.Volume = BackgroundMediaPlayer.Current.Volume;
             BackgroundMediaPlayer.Current.Play();
-            
+            QueueControl.GetInstance().UpdateQueue();
+            PlayerControl.GetInstance().UpdatePlaying();
         }
 
         private async Task<string> GetStreamUrl(object parameter)
@@ -75,19 +79,21 @@ namespace MusicPlayer.Model
             else if (BackgroundMediaPlayer.Current.CurrentState == MediaPlayerState.Playing)
             {
                 MediaPlayer mp = BackgroundMediaPlayer.Current;
-                Playing = false;
                 mp.Pause();
+                PlayerControl.GetInstance().UpdatePlaying();
             }
             else
             {
                 MediaPlayer mp = BackgroundMediaPlayer.Current;
                 mp.Play();
+                PlayerControl.GetInstance().UpdatePlaying();
             }
         }
 
         public void AddToQueue(Song parameter)
         {
             SongQueue.Add(parameter);
+            QueueControl.GetInstance().UpdateQueue();
         }
 
         void MediaEndedEventHandler(MediaPlayer mp, object parameter)

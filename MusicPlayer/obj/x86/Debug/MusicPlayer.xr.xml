@@ -19,10 +19,11 @@
     <RootPropertyPathName Name="PlayCommand" />
     <RootPropertyPathName Name="AlbumArtList" />
     <RootPropertyPathName Name="Url" />
+    <RootPropertyPathName Name="TopFiveAlbums" />
+    <RootPropertyPathName Name="AlbumName" />
     <RootPropertyPathName Name="ArtistTopFive" />
     <RootPropertyPathName Name="ArtistName" />
     <RootPropertyPathName Name="AlbumHits" />
-    <RootPropertyPathName Name="AlbumName" />
     <RootPropertyPathName Name="NavigateToAlbumCommand" />
     <RootPropertyPathName Name="AlbumLabelVisibility" />
     <RootPropertyPathName Name="ArtistHits" />
@@ -37,9 +38,12 @@
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="LoginCommand" />
+    <RootPropertyPathName Name="SongProgress" />
+    <RootPropertyPathName Name="CurrentTime" />
     <RootPropertyPathName Name="Playing" />
     <RootPropertyPathName Name="PauseCommand" />
-    <RootPropertyPathName Name="CurrentTime" />
+    <RootPropertyPathName Name="IsVerticalRailVisible" />
+    <RootPropertyPathName Name="Queue" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -76,6 +80,7 @@
       <RootProperty Name="Width" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Stretch" />
+      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Height" />
@@ -95,6 +100,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Content" />
+      <RootProperty Name="VerticalScrollBarVisibility" />
       <RootMethod Name="GetIsVerticalRailEnabled" />
       <RootMethod Name="SetIsVerticalRailEnabled" />
     </RootType>
@@ -102,8 +108,9 @@
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="ItemTemplate" />
-      <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemsPanel" />
+      <RootProperty Name="IsItemClickEnabled" />
+      <RootProperty Name="Background" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
@@ -130,6 +137,15 @@
     </RootType>
     <RootType FullName="MusicPlayer.View.AlbumPage" />
     <RootType FullName="MusicPlayer.View.AllSongsPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ItemsPanelTemplate">
+      <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Orientation" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Children" />
+    </RootType>
     <RootType FullName="MusicPlayer.View.ArtistPage" />
     <RootType FullName="MusicPlayer.View.Converters.TimeConverter" />
     <RootType FullName="MusicPlayer.View.PlayerUserControl">
@@ -145,15 +161,7 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ItemsPanelTemplate">
-      <RootProperty Name="Template" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Orientation" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Children" />
-    </RootType>
+    <RootType FullName="MusicPlayer.View.QueueUserControl" />
     <RootType FullName="MusicPlayer.View.MainMenu" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Width" />
@@ -171,7 +179,17 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="MusicPlayer.View.Converters.PlayingConverter" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Value" />
+      <RootProperty Name="Minimum" />
+      <RootProperty Name="Maximum" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="HorizontalAlignment" />
+    </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
-    <RootType FullName="MusicPlayer.View.TrackControlUserControl" />
   </Roots.RootTypes>
 </Roots>

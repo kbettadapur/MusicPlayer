@@ -113,6 +113,7 @@
     <Compile Include="ViewModel\AlbumViewModel.cs" />
     <Compile Include="ViewModel\ArtistViewModel.cs" />
     <Compile Include="ViewModel\PlayerControl.cs" />
+    <Compile Include="ViewModel\QueueControl.cs" />
     <Compile Include="View\AlbumPage.xaml.cs">
       <DependentUpon>AlbumPage.xaml</DependentUpon>
     </Compile>
@@ -143,8 +144,8 @@
     <Compile Include="View\PlayerUserControl.xaml.cs">
       <DependentUpon>PlayerUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\TrackControlUserControl.xaml.cs">
-      <DependentUpon>TrackControlUserControl.xaml</DependentUpon>
+    <Compile Include="View\QueueUserControl.xaml.cs">
+      <DependentUpon>QueueUserControl.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -193,7 +194,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TrackControlUserControl.xaml">
+    <Page Include="View\QueueUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -11,12 +11,27 @@ namespace MusicPlayer.ViewModel
 {
     public class PlayerControl : ViewModel
     {
+        private static PlayerControl Instance { get; set; }
         public static Boolean Playing { get; set; }
         public RelayCommand PauseCommand { get; set; }
         public string CurrentTime { get; set; }
         public DispatcherTimer timer { get; set; }
+        public string SongProgress
+        {
+            get { return getSongProgress(); }
+            set { }
+        }
+
+        public static PlayerControl GetInstance()
+        {
+            if (Instance == null)
+            {
+                Instance = new PlayerControl();
+            }
+            return Instance;
+        }
         
-        public PlayerControl()
+        private PlayerControl()
         {
             timer = new DispatcherTimer();
             timer.Tick += TickEventHandler;
@@ -27,23 +42,48 @@ namespace MusicPlayer.ViewModel
 
         public void Pause(object parameter)
         {
-            if (BackgroundMediaPlayer.Current.CurrentState == MediaPlayerState.Paused)
-            {
-                Playing = true;
-                OnPropertyChanged("Playing");
-            }
-            else
-            {
-                Playing = false;
-                OnPropertyChanged("Playing");
-            }
             Player.GetInstance().Pause(parameter);
+            UpdatePlaying();
         }
 
         public void TickEventHandler(object sender, object e)
         {
+            MediaPlayer mp = BackgroundMediaPlayer.Current;
             CurrentTime = BackgroundMediaPlayer.Current.Position.ToString();
             OnPropertyChanged("CurrentTime");
+            OnPropertyChanged("SongProgress");
+            UpdatePlaying();
+        }
+
+        public string getSongProgress()
+        {
+            double minutes = BackgroundMediaPlayer.Current.Position.Minutes;
+            double seconds = BackgroundMediaPlayer.Current.Position.Seconds;
+            if (Player.GetInstance().CurrentSong == -1) { return "0"; }
+            double totalSeconds = 0;
+            try {
+                totalSeconds = Int32.Parse((Player.GetInstance().SongQueue[Player.GetInstance().CurrentSong].durationMillis / 1000).ToString());
+            } catch (Exception e) {
+                return totalSeconds.ToString();
+            }
+            if (totalSeconds == 0) { return "0"; }
+            double currentSeconds = (minutes * 60) + seconds;
+            return ((currentSeconds / totalSeconds) * 100).ToString();
+        }
+
+        public void UpdatePlaying()
+        {
+            if (!BackgroundMediaPlayer.Current.CurrentState.Equals(MediaPlayerState.Playing)
+                && !BackgroundMediaPlayer.Current.CurrentState.Equals(MediaPlayerState.Opening))
+            {
+                Playing = false;
+                OnPropertyChanged("Playing");
+            }
+            else
+            {
+                Playing = true;
+                OnPropertyChanged("Playing");
+            }
         }
     }
 }

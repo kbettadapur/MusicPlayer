@@ -23,7 +23,8 @@ namespace MusicPlayer.View
         public PlayerUserControl()
         {
             this.InitializeComponent();
-            DataContext = new PlayerControl();
+            DataContext = ViewModel.PlayerControl.GetInstance();
+    
         }
     }
 }

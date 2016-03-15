@@ -24,6 +24,11 @@
         <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" FontSize="20" FontWeight="Bold" Text="Top Songs" HorizontalAlignment="Left"/>
         <ScrollViewer Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="100">
             <Grid ScrollViewer.IsVerticalRailEnabled="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
                 <ListView Grid.ColumnSpan="100" BorderBrush="Transparent" ItemsSource="{Binding ArtistTopFive}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -41,6 +46,26 @@
                                 <Button Grid.Column="1" FontFamily="Segoe Ui Symbol" Background="White" Height="45"
                                         Width="50" Content="&#xE102;" VerticalAlignment="Center" Margin="650,0,0,0"
                                         Command="{Binding DataContext.PlayOverrideQueueCommand, ElementName=ArtistContentPage}" CommandParameter="{Binding }"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <TextBlock Grid.Row="1" Text="Albums" FontSize="20" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                <ListView Grid.Row="2"  Grid.ColumnSpan="100" BorderBrush="Transparent" ItemsSource="{Binding TopFiveAlbums}">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Margin="0,15,0,0" Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Grid.Row="0" Source="{Binding AlbumArtRef}" Height="100" Width="100"/>
+                                <TextBlock Grid.Row="1" Text="{Binding AlbumName}" HorizontalAlignment="Center"/>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
