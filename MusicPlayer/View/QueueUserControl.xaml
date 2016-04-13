@@ -10,7 +10,7 @@
     d:DesignWidth="400">
     <ScrollViewer VerticalScrollBarVisibility="{Binding IsVerticalRailVisible}">
         <Grid ScrollViewer.IsVerticalRailEnabled="True">
-            <ListView BorderBrush="Transparent" Background="Tan" ItemsSource="{Binding Queue}">
+            <ListView BorderBrush="Transparent" ItemsSource="{Binding Queue}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>

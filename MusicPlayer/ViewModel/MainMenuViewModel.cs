@@ -5,9 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.Web.Http;
-using Windows.Media.Playback;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 
 namespace MusicPlayer.ViewModel
 {

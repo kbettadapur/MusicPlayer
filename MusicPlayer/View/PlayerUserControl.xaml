@@ -20,9 +20,21 @@
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1" Height="60" Orientation="Horizontal">
-            <Button Width="100" Height="50" Content="&#x23EE;" FontSize="30" FontFamily="Segoe UI Symbol" Margin="330,0,0,0" VerticalAlignment="Center"/>
+            <Button Width="100" Height="50" Content="&#x23EE;" Command="{Binding GoBackwardsCommand}" FontSize="30" FontFamily="Segoe UI Symbol" Margin="330,0,0,0" VerticalAlignment="Center"/>
             <Button Width="100" Height="50" Content="{Binding Playing, Converter={StaticResource PlayingConverter}}" FontSize="30" VerticalAlignment="Center" FontFamily="Segoe UI Symbol" Command="{Binding PauseCommand}" Margin="25,0,0,0"/>
-            <Button Width="100" Height="50" Content="&#x23ED;" FontSize="30" FontFamily="Segoe UI Symbol" VerticalAlignment="Center" Margin="25,0,0,0"/>
+            <Button Width="100" Height="50" Content="&#x23ED;" Command="{Binding GoForwardCommand}" FontSize="30" FontFamily="Segoe UI Symbol" VerticalAlignment="Center" Margin="25,0,0,0"/>
+            <Image Width="50" Margin="50,0,0,0" Height="50" Source="{Binding NowPlaying.AlbumArtList[0].Url}"/>
+            <Grid Margin="10,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="15"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{Binding NowPlaying.Title}"/>
+                <TextBlock Text="{Binding NowPlaying.Artist}" FontSize="10" Grid.Row="1"/>
+                <TextBlock Text="{Binding NowPlaying.Album}" FontSize="10" Grid.Row="2"/>
+            </Grid>
+            
         </StackPanel>
         <TextBlock Grid.Row="0" Text="{Binding CurrentTime, Converter={StaticResource TimeConverter}}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="90"/>
         <ProgressBar Name="bar" Grid.Row="0" Value="{Binding SongProgress}" Minimum="0" Maximum="100" VerticalAlignment="Bottom" Height="5" Width="1000" Background="LightBlue" HorizontalAlignment="Center"/>

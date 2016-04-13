@@ -13,6 +13,15 @@ namespace MusicPlayer.Model
         public bool Playing { get; set; }
         private static Player Instance;
         public ObservableCollection<Song> SongQueue { get; set; }
+        public Song NowPlaying
+        {
+            get
+            {
+                if (CurrentSong < 0 || CurrentSong > SongQueue.Count - 1)
+                    return null;
+                return SongQueue[CurrentSong];
+            }
+        }
         public int CurrentSong { get; set; }
 
         private Player()
@@ -37,7 +46,6 @@ namespace MusicPlayer.Model
             string streamUrl = await GetStreamUrl(parameter);
             BackgroundMediaPlayer.Current.SetUriSource(new Uri(streamUrl));
             BackgroundMediaPlayer.Current.Play();
-            PlayerControl.GetInstance().UpdatePlaying();
         }
 
         public async void PlayOverrideQueue(object parameter)
@@ -49,7 +57,6 @@ namespace MusicPlayer.Model
             BackgroundMediaPlayer.Current.Volume = BackgroundMediaPlayer.Current.Volume;
             BackgroundMediaPlayer.Current.Play();
             QueueControl.GetInstance().UpdateQueue();
-            PlayerControl.GetInstance().UpdatePlaying();
         }
 
         private async Task<string> GetStreamUrl(object parameter)
@@ -80,20 +87,35 @@ namespace MusicPlayer.Model
             {
                 MediaPlayer mp = BackgroundMediaPlayer.Current;
                 mp.Pause();
-                PlayerControl.GetInstance().UpdatePlaying();
             }
             else
             {
                 MediaPlayer mp = BackgroundMediaPlayer.Current;
                 mp.Play();
-                PlayerControl.GetInstance().UpdatePlaying();
             }
+            int x = 0;
         }
 
         public void AddToQueue(Song parameter)
         {
             SongQueue.Add(parameter);
             QueueControl.GetInstance().UpdateQueue();
+        }
+
+        public void GoForward()
+        {
+            if (CurrentSong + 1 < SongQueue.Count)
+            {
+                Play(SongQueue[++CurrentSong]);
+            }
+        }
+
+        public void GoBackwards()
+        {
+            if (CurrentSong > 0)
+            {
+                Play(SongQueue[--CurrentSong]);
+            }
         }
 
         void MediaEndedEventHandler(MediaPlayer mp, object parameter)

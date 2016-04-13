@@ -16,6 +16,9 @@ namespace MusicPlayer.ViewModel
         public RelayCommand PauseCommand { get; set; }
         public string CurrentTime { get; set; }
         public DispatcherTimer timer { get; set; }
+        public RelayCommand GoBackwardsCommand { get; set; }
+        public RelayCommand GoForwardCommand { get; set; }
+        public Song NowPlaying { get; set; }
         public string SongProgress
         {
             get { return getSongProgress(); }
@@ -37,7 +40,10 @@ namespace MusicPlayer.ViewModel
             timer.Tick += TickEventHandler;
             timer.Start();
             PauseCommand = new RelayCommand(Pause);
+            GoForwardCommand = new RelayCommand(GoForward);
+            GoBackwardsCommand = new RelayCommand(GoBackwards);
             Playing = false;
+            NowPlaying = null;
         }
 
         public void Pause(object parameter)
@@ -50,6 +56,8 @@ namespace MusicPlayer.ViewModel
         {
             MediaPlayer mp = BackgroundMediaPlayer.Current;
             CurrentTime = BackgroundMediaPlayer.Current.Position.ToString();
+            NowPlaying = Player.GetInstance().NowPlaying;
+            OnPropertyChanged("NowPlaying");
             OnPropertyChanged("CurrentTime");
             OnPropertyChanged("SongProgress");
             UpdatePlaying();
@@ -84,6 +92,16 @@ namespace MusicPlayer.ViewModel
                 Playing = true;
                 OnPropertyChanged("Playing");
             }
+        }
+
+        public void GoForward(object parameter)
+        {
+            Player.GetInstance().GoForward();
+        }
+
+        public void GoBackwards(object parameter)
+        {
+            Player.GetInstance().GoBackwards();
         }
     }
 }

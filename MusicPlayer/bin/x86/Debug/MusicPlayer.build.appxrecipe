@@ -9,16 +9,16 @@
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>b3b9e8cc-4229-4d2d-99c4-9e27146e01f6</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\obj\x86\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\MusicPlayer.exe">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\bin\x86\Debug\MusicPlayer.exe">
       <PackagePath>entrypoint\MusicPlayer.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Kirin\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
@@ -348,52 +348,52 @@
     <AppxPackagedFile Include="C:\Users\Kirin\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\ApplicationInsights.config">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\Assets\googlePlayHeadphones.png">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\Assets\googlePlayHeadphones.png">
       <PackagePath>Assets\googlePlayHeadphones.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\MusicPlayer.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\bin\x86\Debug\MusicPlayer.xr.xml">
       <PackagePath>MusicPlayer.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Kirin\documents\visual studio 2015\Projects\MusicPlayer\MusicPlayer\bin\x86\Debug\Core\MusicPlayer.exe">
+    <AppxPackagedFile Include="C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\bin\x86\Debug\Core\MusicPlayer.exe">
       <PackagePath>MusicPlayer.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
