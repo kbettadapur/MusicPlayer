@@ -102,6 +102,11 @@ namespace MusicPlayer.Model
             QueueControl.GetInstance().UpdateQueue();
         }
 
+        public void RemoveFromQueue(Song parameter)
+        {
+            SongQueue.Remove(parameter);
+        }
+
         public void GoForward()
         {
             if (CurrentSong + 1 < SongQueue.Count)

@@ -111,11 +111,15 @@
     <Compile Include="Model\Song.cs" />
     <Compile Include="Model\TotalAlbumData.cs" />
     <Compile Include="ViewModel\AlbumViewModel.cs" />
+    <Compile Include="ViewModel\AllArtistsViewModel.cs" />
     <Compile Include="ViewModel\ArtistViewModel.cs" />
     <Compile Include="ViewModel\PlayerControl.cs" />
     <Compile Include="ViewModel\QueueControl.cs" />
     <Compile Include="View\AlbumPage.xaml.cs">
       <DependentUpon>AlbumPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AllArtistsPage.xaml.cs">
+      <DependentUpon>AllArtistsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ArtistPage.xaml.cs">
       <DependentUpon>ArtistPage.xaml</DependentUpon>
@@ -171,6 +175,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="View\AlbumPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AllArtistsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

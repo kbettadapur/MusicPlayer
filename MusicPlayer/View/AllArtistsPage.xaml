@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="MusicPlayer.View.AllArtistsPage"
+    x:Name="AllArtists"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MusicPlayer.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Button Content="&#xe112;" FontFamily="Segoe Ui Symbol" Grid.Row="0" Height="50" Width="50" Command="{Binding GoBackCommand}"/>
+        <GridView Grid.Row="1" ItemsSource="{Binding ArtistHits}">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{Binding ArtistArtRef}" Grid.Row="0" Height="50" Width="100" VerticalAlignment="Bottom"/>
+                        <TextBlock Text="{Binding ArtistName}" TextTrimming="WordEllipsis" Height="30" Width="100" Grid.Row="1" HorizontalAlignment="Center" FontWeight="ExtraBold"/>
+                        <Button Grid.Row="0" Width="100" Height="80" Grid.RowSpan="2" Command="{Binding DataContext.NavigateToArtistCommand, ElementName=AllArtists}"
+                                CommandParameter="{Binding }"/>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+    </Grid>
+</Page>

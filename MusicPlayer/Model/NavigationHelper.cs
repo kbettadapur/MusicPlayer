@@ -39,5 +39,10 @@ namespace MusicPlayer.Model
         {
             return PageStack.Count;
         }
+
+        public object Peek()
+        {
+            return PageStack.Peek();
+        }
     }
 }

@@ -37,6 +37,7 @@
             
         </StackPanel>
         <TextBlock Grid.Row="0" Text="{Binding CurrentTime, Converter={StaticResource TimeConverter}}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="90"/>
+        <TextBlock Grid.Row="0" Text="{Binding NowPlaying.Duration}" HorizontalAlignment="Right" Height="30" Width="auto"/>
         <ProgressBar x:ConnectionId='2' Name="bar" Grid.Row="0" Value="{Binding SongProgress}" Minimum="0" Maximum="100" VerticalAlignment="Bottom" Height="5" Width="1000" Background="LightBlue" HorizontalAlignment="Center"/>
     </Grid>
 

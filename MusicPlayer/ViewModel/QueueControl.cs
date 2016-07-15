@@ -13,12 +13,14 @@ namespace MusicPlayer.ViewModel
     {
         private static QueueControl Instance { get; set; }
         public ObservableCollection<Song> Queue { get; set; }
+        public RelayCommand RemoveTrackCommand { get; set; }
         public ScrollBarVisibility IsVerticalRailVisible { get; set; }
 
         private QueueControl()
         {
             IsVerticalRailVisible = ScrollBarVisibility.Hidden;
             Queue = Player.GetInstance().SongQueue;
+            RemoveTrackCommand = new RelayCommand(DeleteTrack);
         }
 
         public static QueueControl GetInstance()
@@ -35,5 +37,15 @@ namespace MusicPlayer.ViewModel
             else { IsVerticalRailVisible = ScrollBarVisibility.Hidden; }
             OnPropertyChanged("IsVerticalRailVisible");
         }
+
+        public void DeleteTrack(object parameter)
+        {
+            Player.GetInstance().RemoveFromQueue((Song) parameter);
+            Queue = Player.GetInstance().SongQueue;
+            OnPropertyChanged("Queue");
+            if (Queue.Count > 6) { IsVerticalRailVisible = ScrollBarVisibility.Visible; }
+            else { IsVerticalRailVisible = ScrollBarVisibility.Hidden; }
+            OnPropertyChanged("IsVerticalRailVisible");
+        }
     }
-}
+}  

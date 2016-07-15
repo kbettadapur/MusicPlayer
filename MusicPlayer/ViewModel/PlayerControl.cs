@@ -19,11 +19,7 @@ namespace MusicPlayer.ViewModel
         public RelayCommand GoBackwardsCommand { get; set; }
         public RelayCommand GoForwardCommand { get; set; }
         public Song NowPlaying { get; set; }
-        public string SongProgress
-        {
-            get { return getSongProgress(); }
-            set { }
-        }
+        public int SongProgress { get; set; }
 
         public static PlayerControl GetInstance()
         {
@@ -44,6 +40,7 @@ namespace MusicPlayer.ViewModel
             GoBackwardsCommand = new RelayCommand(GoBackwards);
             Playing = false;
             NowPlaying = null;
+            SongProgress = 0;
         }
 
         public void Pause(object parameter)
@@ -57,26 +54,28 @@ namespace MusicPlayer.ViewModel
             MediaPlayer mp = BackgroundMediaPlayer.Current;
             CurrentTime = BackgroundMediaPlayer.Current.Position.ToString();
             NowPlaying = Player.GetInstance().NowPlaying;
+            SongProgress = getSongProgress();
             OnPropertyChanged("NowPlaying");
             OnPropertyChanged("CurrentTime");
             OnPropertyChanged("SongProgress");
+            int x = 0;
             UpdatePlaying();
         }
 
-        public string getSongProgress()
+        public int getSongProgress()
         {
             double minutes = BackgroundMediaPlayer.Current.Position.Minutes;
             double seconds = BackgroundMediaPlayer.Current.Position.Seconds;
-            if (Player.GetInstance().CurrentSong == -1) { return "0"; }
+            if (Player.GetInstance().CurrentSong == -1) { return 0; }
             double totalSeconds = 0;
             try {
                 totalSeconds = Int32.Parse((Player.GetInstance().SongQueue[Player.GetInstance().CurrentSong].durationMillis / 1000).ToString());
             } catch (Exception e) {
-                return totalSeconds.ToString();
+                return (int)totalSeconds;
             }
-            if (totalSeconds == 0) { return "0"; }
+            if (totalSeconds == 0) { return 0; }
             double currentSeconds = (minutes * 60) + seconds;
-            return ((currentSeconds / totalSeconds) * 100).ToString();
+            return (int)((currentSeconds / totalSeconds) * 100);
         }
 
         public void UpdatePlaying()

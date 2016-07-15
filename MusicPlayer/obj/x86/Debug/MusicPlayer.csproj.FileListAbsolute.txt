@@ -456,3 +456,8 @@ C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\Mus
 C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\bin\x86\Debug\View\AllArtistsPage.xbf
+C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\obj\x86\Debug\View\AllArtistsPage.g.i.cs
+C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\obj\x86\Debug\View\AllArtistsPage.g.cs
+C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\obj\x86\Debug\View\AllArtistsPage.xaml
+C:\Users\Kirin\Documents\Visual Studio 2015\Projects\MusicPlayer\MusicPlayer\MusicPlayer\obj\x86\Debug\View\AllArtistsPage.xbf

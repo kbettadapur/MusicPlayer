@@ -18,14 +18,14 @@
             <Grid ScrollViewer.IsVerticalRailEnabled="True">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="650"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="350"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="250"/>
                     <RowDefinition Height="50"/>
-                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="100"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="150"/>
                 </Grid.RowDefinitions>
@@ -74,8 +74,13 @@
                     <TextBox Height="30" Width="225" Text="{Binding Path=SearchQuery, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Tracks, Artists, Albums"/>
                     <Button Height="30" Width="100" Command="{Binding SearchCommand}" Content="Search"/>
                 </StackPanel>
+
                 <views:QueueUserControl Grid.Row="2" Grid.Column="1" Grid.RowSpan="2"/>
                 <TextBlock Visibility="{Binding ArtistLabelVisibility}" Margin="35,20,0,0" Grid.Row="3" Grid.Column="0" Height="30" Text="Artists" FontWeight="Bold" FontSize="20"/>
+                <Button Content="All Artists" Grid.Row="3" Grid.Column="0" Height="25" 
+                        Width="70" Margin="0,0,50,0" Background="Orange" Foreground="White" 
+                        FontWeight="Bold" HorizontalAlignment="Right" Visibility="{Binding ArtistLabelVisibility}"
+                        FontSize="9" Command="{Binding AllArtistsCommand}"/>
                 <ListView x:ConnectionId='2' Grid.ColumnSpan="100"                                     Grid.Row="4" Grid.Column="0" IsItemClickEnabled="True" BorderBrush="Transparent" ItemsSource="{Binding ArtistHits}">
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>

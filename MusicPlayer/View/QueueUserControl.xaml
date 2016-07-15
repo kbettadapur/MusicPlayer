@@ -1,5 +1,6 @@
 ﻿<UserControl
     x:Class="MusicPlayer.View.QueueUserControl"
+    x:Name="QueueControlLayout"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MusicPlayer.View"
@@ -17,9 +18,11 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="40"/>
                                 <ColumnDefinition Width="50"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
                             </Grid.ColumnDefinitions>
-                            <Button Grid.Column="0" Width="40" Height="50" Content="&#xe107;" HorizontalAlignment="Left" FontFamily="Segoe Ui Symbol"/>
+                            <Button Grid.Column="0" Width="40" Height="50" Content="&#xe107;" 
+                                    Command="{Binding DataContext.RemoveTrackCommand, ElementName=QueueControlLayout}" CommandParameter="{Binding }" 
+                                    HorizontalAlignment="Left" FontFamily="Segoe Ui Symbol"/>
                             <Image Grid.Column="1" HorizontalAlignment="Left" Source="{Binding AlbumArtList[0].Url}" Width="50" Height="50"/>
                             <Grid Grid.Column="2">
                                 <Grid.RowDefinitions>

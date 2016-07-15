@@ -16,6 +16,7 @@ namespace MusicPlayer.ViewModel
         public RelayCommand AllSongsCommand { get; set; }
         public RelayCommand NavigateToAlbumCommand { get; set; }
         public RelayCommand NavigateToArtistCommand { get; set; }
+        public RelayCommand AllArtistsCommand { get; set; }
         public HttpClient client;
         public List<Song> SongHits { get; set; }
         public List<Artist> ArtistHits { get; set; }
@@ -33,6 +34,7 @@ namespace MusicPlayer.ViewModel
             client = new HttpClient();
             PlayOverrideQueueCommand = new RelayCommand(PlayOverrideQueue);
             AllSongsCommand = new RelayCommand(NavigateToAllSongs);
+            AllArtistsCommand = new RelayCommand(NavigateToAllArtists);
             SongLabelVisibility = "Collapsed";
             ArtistLabelVisibility = "Collapsed";
             AlbumLabelVisibility = "Collapsed";
@@ -89,6 +91,11 @@ namespace MusicPlayer.ViewModel
         public void NavigateToAllSongs(object parameter)
         {
             NavigationService.GetInstance().Navigate(typeof(AllSongsPage), Hits.GetSongHits(AllHits.entries, 50));
+        }
+
+        public void NavigateToAllArtists(object parameter)
+        {
+            NavigationService.GetInstance().Navigate(typeof(AllArtistsPage), Hits.GetArtistHits(AllHits.entries, 50));
         }
 
         public async void NavigateToArtist(object parameter)

@@ -15,6 +15,10 @@
     <RootPropertyPathName Name="AlbumTitle" />
     <RootPropertyPathName Name="GoBackCommand" />
     <RootPropertyPathName Name="AlbumArtRef" />
+    <RootPropertyPathName Name="ArtistHits" />
+    <RootPropertyPathName Name="NavigateToArtistCommand" />
+    <RootPropertyPathName Name="ArtistName" />
+    <RootPropertyPathName Name="ArtistArtRef" />
     <RootPropertyPathName Name="SongHits" />
     <RootPropertyPathName Name="PlayCommand" />
     <RootPropertyPathName Name="AlbumArtList" />
@@ -22,14 +26,11 @@
     <RootPropertyPathName Name="TopFiveAlbums" />
     <RootPropertyPathName Name="AlbumName" />
     <RootPropertyPathName Name="ArtistTopFive" />
-    <RootPropertyPathName Name="ArtistName" />
     <RootPropertyPathName Name="AlbumHits" />
     <RootPropertyPathName Name="NavigateToAlbumCommand" />
     <RootPropertyPathName Name="AlbumLabelVisibility" />
-    <RootPropertyPathName Name="ArtistHits" />
-    <RootPropertyPathName Name="NavigateToArtistCommand" />
-    <RootPropertyPathName Name="ArtistArtRef" />
     <RootPropertyPathName Name="ArtistLabelVisibility" />
+    <RootPropertyPathName Name="AllArtistsCommand" />
     <RootPropertyPathName Name="SearchCommand" />
     <RootPropertyPathName Name="SearchQuery" />
     <RootPropertyPathName Name="SongLabelVisibility" />
@@ -39,8 +40,8 @@
     <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="LoginCommand" />
     <RootPropertyPathName Name="SongProgress" />
-    <RootPropertyPathName Name="CurrentTime" />
     <RootPropertyPathName Name="NowPlaying" />
+    <RootPropertyPathName Name="CurrentTime" />
     <RootPropertyPathName Name="Album" />
     <RootPropertyPathName Name="GoForwardCommand" />
     <RootPropertyPathName Name="Playing" />
@@ -48,6 +49,7 @@
     <RootPropertyPathName Name="GoBackwardsCommand" />
     <RootPropertyPathName Name="IsVerticalRailVisible" />
     <RootPropertyPathName Name="Queue" />
+    <RootPropertyPathName Name="RemoveTrackCommand" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -137,10 +139,16 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="TextTrimming" />
       <RootProperty Name="Visibility" />
       <RootProperty Name="Foreground" />
     </RootType>
     <RootType FullName="MusicPlayer.View.AlbumPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.GridView">
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="ItemTemplate" />
+    </RootType>
+    <RootType FullName="MusicPlayer.View.AllArtistsPage" />
     <RootType FullName="MusicPlayer.View.AllSongsPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ItemsPanelTemplate">
       <RootProperty Name="Template" />

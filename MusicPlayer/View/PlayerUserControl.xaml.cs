@@ -24,7 +24,6 @@ namespace MusicPlayer.View
         {
             this.InitializeComponent();
             DataContext = ViewModel.PlayerControl.GetInstance();
-    
         }
     }
 }
